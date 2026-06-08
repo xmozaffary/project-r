@@ -1,0 +1,31 @@
+name: Build and push Docker image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout kod
+        uses: actions/checkout@v4
+
+      - name: Sätt upp Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Logga in på Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Bygg och pusha multi-platform image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: mozaffary/ditt-foretag:latest

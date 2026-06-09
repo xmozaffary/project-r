@@ -5,7 +5,6 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Jobs from './pages/Jobs'
-import Apply from './pages/Apply'
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/om-oss" element={<About />} />
           <Route path="/lediga-tjanster" element={<Jobs />} />
-          <Route path="/ansok" element={<Apply />} />
         </Routes>
       </main>
       <Footer />

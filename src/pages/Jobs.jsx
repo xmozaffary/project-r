@@ -1,6 +1,8 @@
 // Sida: Lediga tjänster
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { colors } from '../theme'
+
+const EMAIL = 'frank@corelinkgroup.se'
 
 const services = [
   {
@@ -30,6 +32,34 @@ const positions = [
   },
 ]
 
+function CopyEmail({ small }) {
+  const [copied, setCopied] = useState(false)
+
+  function handleCopy() {
+    navigator.clipboard.writeText(EMAIL)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  if (small) {
+    return (
+      <button onClick={handleCopy} style={{ background: 'none', border: 'none', cursor: 'pointer', color: colors.textLight, fontSize: '14px', fontFamily: 'inherit', padding: 0, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+        {EMAIL}
+        <span style={{ fontSize: '12px', background: copied ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.15)', padding: '2px 8px', borderRadius: '4px', transition: 'background 0.2s' }}>
+          {copied ? 'Kopierad!' : 'Kopiera'}
+        </span>
+      </button>
+    )
+  }
+
+  return (
+    <button onClick={handleCopy} style={{ background: copied ? '#16a34a' : colors.accent, color: '#fff', border: 'none', padding: '13px 32px', fontWeight: 700, fontSize: '15px', cursor: 'pointer', fontFamily: 'inherit', borderRadius: '6px', transition: 'background 0.2s', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+      {EMAIL}
+      <span style={{ fontSize: '12px', opacity: 0.85 }}>{copied ? '✓ Kopierad!' : 'Klicka för att kopiera'}</span>
+    </button>
+  )
+}
+
 function Jobs() {
   return (
     <div>
@@ -37,9 +67,10 @@ function Jobs() {
       <section style={{ background: colors.primary, color: '#fff', paddingTop: '64px', paddingBottom: '64px' }}>
         <div className="wrap">
           <h1 style={{ fontSize: '42px', fontWeight: 800, color: '#fff' }}>Lediga tjänster</h1>
-          <p style={{ color: colors.textLight, fontSize: '15px', marginTop: '10px', lineHeight: 1.7 }}>
+          <p style={{ color: colors.textLight, fontSize: '15px', marginTop: '10px', lineHeight: 1.7, marginBottom: '16px' }}>
             Vi söker engagerade medarbetare inom försäljning, mötesbokning och kundservice.
           </p>
+          <CopyEmail small />
         </div>
       </section>
 
@@ -77,9 +108,7 @@ function Jobs() {
             <p style={{ fontSize: '14px', color: colors.text, marginBottom: '20px', lineHeight: 1.7 }}>
               Skicka ett mejl med en kort beskrivning av dig själv. Bifoga gärna ditt CV och personliga brev.
             </p>
-            <a href="mailto:frank@corelinkgroup.se" style={{ display: 'inline-block', background: colors.accent, color: '#fff', padding: '13px 32px', fontWeight: 700, fontSize: '15px', textDecoration: 'none', borderRadius: '6px' }}>
-              frank@corelinkgroup.se
-            </a>
+            <CopyEmail />
           </div>
 
         </div>

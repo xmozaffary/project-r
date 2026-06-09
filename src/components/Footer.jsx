@@ -16,7 +16,7 @@ function Footer() {
 
           <div>
             <p style={{ color: '#fff', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>Snabblänkar</p>
-            {[['/', 'Hem'], ['/om-oss', 'Om oss'], ['/lediga-tjanster', 'Lediga tjänster'], ['/ansok', 'Ansök om jobb']].map(([to, label]) => (
+            {[['/', 'Hem'], ['/om-oss', 'Om oss'], ['/lediga-tjanster', 'Lediga tjänster'], ].map(([to, label]) => (
               <Link key={to} to={to}
                 style={{ display: 'block', color: colors.textLight, textDecoration: 'none', fontSize: '13px', padding: '3px 0' }}
                 onMouseEnter={e => e.target.style.color = colors.highlight}

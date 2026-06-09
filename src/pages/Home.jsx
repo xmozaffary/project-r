@@ -1,19 +1,20 @@
 // Startsida
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { colors } from '../theme'
 
 const cards = [
-  { to: '/tjanster', title: 'Tjänster', desc: 'Se vad vi erbjuder för callcenter-tjänster.' },
-  { to: '/om-oss', title: 'Om oss', desc: 'Läs mer om företaget och vad vi gör.' },
-  { to: '/lediga-tjanster', title: 'Lediga tjänster', desc: 'Vi söker nya medarbetare – kika in!' },
+  { to: '/tjanster', title: 'Tjänster', desc: 'Se vad vi erbjuder för callcenter-tjänster.', img: '/services.png' },
+  { to: '/om-oss', title: 'Om oss', desc: 'Läs mer om företaget och vad vi gör.', img: '/au.png' },
+  { to: '/lediga-tjanster', title: 'Lediga tjänster', desc: 'Vi söker nya medarbetare – kika in!', img: '/job.png' },
 ]
 
-function ImageCard({ to, title, desc }) {
+function ImageCard({ to, title, desc, img }) {
   const [hovered, setHovered] = useState(false)
   return (
     <Link
       to={to}
-      style={{ display: 'block', textDecoration: 'none', position: 'relative', backgroundImage: 'url(/service.png)', backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '8px', overflow: 'hidden', minHeight: '280px' }}
+      style={{ display: 'block', textDecoration: 'none', position: 'relative', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '8px', overflow: 'hidden', minHeight: '280px' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -53,11 +54,11 @@ function Home() {
           <h1 style={{ fontSize: 'clamp(32px, 5vw, 60px)', fontWeight: 800, lineHeight: 1.2, margin: '12px 0 20px', color: '#fff' }}>
             Vi är rösten för ditt företag
           </h1>
-          <p style={{ color: '#bfdbfe', fontSize: '17px', lineHeight: 1.7, maxWidth: '480px', margin: '0 auto 36px' }}>
+          <p style={{ color: colors.textLight, fontSize: '17px', lineHeight: 1.7, maxWidth: '480px', margin: '0 auto 36px' }}>
             Vi hanterar din kundkontakt professionellt. Vi söker också engagerade medarbetare.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/lediga-tjanster" style={{ background: '#f97316', color: '#fff', padding: '13px 28px', fontWeight: 700, fontSize: '15px', textDecoration: 'none', borderRadius: '6px' }}>
+            <Link to="/lediga-tjanster" style={{ background: colors.accent, color: '#fff', padding: '13px 28px', fontWeight: 700, fontSize: '15px', textDecoration: 'none', borderRadius: '6px' }}>
               Se lediga tjänster
             </Link>
             <Link to="/tjanster" style={{ border: '2px solid rgba(255,255,255,0.7)', color: '#fff', padding: '13px 28px', fontWeight: 700, fontSize: '15px', textDecoration: 'none', borderRadius: '6px' }}>

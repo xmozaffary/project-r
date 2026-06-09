@@ -6,6 +6,9 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+ARG VITE_WEB3FORMS_KEY
+ENV VITE_WEB3FORMS_KEY=$VITE_WEB3FORMS_KEY
+
 COPY . .
 RUN npm run build
 

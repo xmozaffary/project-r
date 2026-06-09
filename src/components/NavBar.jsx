@@ -5,7 +5,6 @@ import { colors } from '../theme'
 
 const links = [
   { to: '/', label: 'Hem' },
-  { to: '/tjanster', label: 'Tjänster' },
   { to: '/om-oss', label: 'Om oss' },
   { to: '/lediga-tjanster', label: 'Lediga tjänster' },
 ]

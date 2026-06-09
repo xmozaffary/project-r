@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { colors } from '../theme'
 
 const cards = [
-  { to: '/tjanster', title: 'Tjänster', desc: 'Se vad vi erbjuder för callcenter-tjänster.', img: '/services.png' },
   { to: '/om-oss', title: 'Om oss', desc: 'Läs mer om företaget och vad vi gör.', img: '/au.png' },
   { to: '/lediga-tjanster', title: 'Lediga tjänster', desc: 'Vi söker nya medarbetare – kika in!', img: '/job.png' },
 ]
@@ -61,8 +60,8 @@ function Home() {
             <Link to="/lediga-tjanster" style={{ background: colors.accent, color: '#fff', padding: '13px 28px', fontWeight: 700, fontSize: '15px', textDecoration: 'none', borderRadius: '6px' }}>
               Se lediga tjänster
             </Link>
-            <Link to="/tjanster" style={{ border: '2px solid rgba(255,255,255,0.7)', color: '#fff', padding: '13px 28px', fontWeight: 700, fontSize: '15px', textDecoration: 'none', borderRadius: '6px' }}>
-              Våra tjänster
+            <Link to="/om-oss" style={{ border: '2px solid rgba(255,255,255,0.7)', color: '#fff', padding: '13px 28px', fontWeight: 700, fontSize: '15px', textDecoration: 'none', borderRadius: '6px' }}>
+              Om oss
             </Link>
           </div>
         </div>
@@ -71,7 +70,7 @@ function Home() {
       {/* Bildkort – tjänster, om oss, lediga tjänster */}
       <section style={{ background: '#fff', paddingTop: '64px', paddingBottom: '64px' }}>
         <div className="wrap">
-          <div className="grid-3col">
+          <div className="grid-2col">
             {cards.map(card => <ImageCard key={card.to} {...card} />)}
           </div>
         </div>

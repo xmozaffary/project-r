@@ -16,7 +16,7 @@ function Footer() {
 
           <div>
             <p style={{ color: '#fff', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>Snabblänkar</p>
-            {[['/', 'Hem'], ['/tjanster', 'Tjänster'], ['/om-oss', 'Om oss'], ['/lediga-tjanster', 'Lediga tjänster'], ['/ansok', 'Ansök om jobb']].map(([to, label]) => (
+            {[['/', 'Hem'], ['/om-oss', 'Om oss'], ['/lediga-tjanster', 'Lediga tjänster'], ['/ansok', 'Ansök om jobb']].map(([to, label]) => (
               <Link key={to} to={to}
                 style={{ display: 'block', color: colors.textLight, textDecoration: 'none', fontSize: '13px', padding: '3px 0' }}
                 onMouseEnter={e => e.target.style.color = colors.highlight}
@@ -29,10 +29,9 @@ function Footer() {
           <div>
             <p style={{ color: '#fff', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '12px' }}>Kontakta oss</p>
             <p style={{ fontSize: '13px', lineHeight: 2.0 }}>
-              📞 070-000 00 00<br />
-              ✉️ info@dittforetag.se<br />
-              ✉️ jobb@corelinkgroup.se<br />
-              📍 Sverige
+              ✉️ frank@corelinkgroup.se<br />
+              📍 Ateljégatan 4, 724 71 Västerås<br />
+              🌐 corelinkgroup.se
             </p>
           </div>
 

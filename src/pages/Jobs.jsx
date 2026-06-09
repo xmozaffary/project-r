@@ -42,7 +42,7 @@ function CopyEmail() {
   }
 
   return (
-    <button onClick={handleCopy} style={{ background: copied ? '#16a34a' : colors.accent, color: '#fff', border: 'none', padding: '13px 28px', fontWeight: 700, fontSize: '15px', cursor: 'pointer', fontFamily: 'inherit', borderRadius: '6px', transition: 'background 0.2s', whiteSpace: 'nowrap' }}>
+    <button onClick={handleCopy} style={{ background: copied ? '#16a34a' : colors.accent, color: '#fff', border: 'none', padding: '13px 28px', fontWeight: 700, fontSize: '15px', cursor: 'pointer', fontFamily: 'inherit', borderRadius: '6px', transition: 'background 0.2s', whiteSpace: 'nowrap', minWidth: '260px', textAlign: 'center' }}>
       {copied ? '✓ Kopierad!' : EMAIL}
     </button>
   )
@@ -95,7 +95,7 @@ function Jobs() {
           <div style={{ marginTop: '40px', background: '#fff', border: `1px solid ${colors.border}`, padding: '32px', borderRadius: '8px', textAlign: 'center' }}>
             <h3 style={{ fontSize: '18px', fontWeight: 700, color: colors.primaryDark, marginBottom: '10px' }}>Intresserad?</h3>
             <p style={{ fontSize: '14px', color: colors.text, marginBottom: '20px', lineHeight: 1.7 }}>
-              Skicka ett mejl med en kort beskrivning av dig själv. Bifoga gärna ditt CV och personliga brev.
+              Skicka ett mejl med en kort beskrivning av dig själv. Bifoga gärna ditt <strong>CV</strong> och <strong>personliga brev</strong>.
             </p>
             <CopyEmail />
           </div>

@@ -15,7 +15,7 @@ const services = [
   },
   {
     title: 'Kundservice & Support',
-    desc: 'God kundservice handlar om mer än att besvara frågor – det handlar om att skapa trygghet och bygga förtroende. Vi erbjuder flexibla kundservicelösningar där våra medarbetare hanterar kundärenden, support, uppföljning och administration med hög servicekänsla och professionalism. Genom att vara en förlängning av ert företag hjälper vi er att skapa nöjda kunder och långsiktiga relationer.',
+    desc: 'God kundservice handlar om mer än att besvara frågor. Det handlar om att skapa trygghet och bygga förtroende. Vi erbjuder flexibla kundservicelösningar där våra medarbetare hanterar kundärenden, support, uppföljning och administration med hög servicekänsla och professionalism. Genom att vara en förlängning av ert företag hjälper vi er att skapa nöjda kunder och långsiktiga relationer.',
   },
 ]
 
